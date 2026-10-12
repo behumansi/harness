@@ -3,7 +3,7 @@
 set -euo pipefail
 
 HIVE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="0.1.0"
+VERSION="1.1.0"
 
 c_grn=$'\033[32m'; c_dim=$'\033[2m'; c_bold=$'\033[1m'; c_red=$'\033[31m'; c_off=$'\033[0m'
 say() { printf "%s\n" "$*"; }
@@ -17,6 +17,7 @@ ${c_bold}bh${c_off} ${c_dim}v$VERSION${c_off} · your agent OS
   ${c_bold}bh start${c_off}           begin the guided onboarding (the agent reads START.md and walks you through it)
   ${c_bold}bh init${c_off}            seed this repo: CLAUDE.md + brain/ME.md from the base method
   ${c_bold}bh memory [install]${c_off}  install the memory layer: the four brains
+  ${c_bold}bh stack [list|piece]${c_off} install the open-source stack: gstack, superpowers, 160+ subagents
   ${c_bold}bh status${c_off}          what's installed: skills, harness, brain, memory
   ${c_bold}bh doctor${c_off}          health check: git, claude CLI, no staged secrets
   ${c_bold}bh onboard <name>${c_off}  scaffold a fresh instance for someone else
@@ -61,6 +62,11 @@ cmd_status() {
   { command -v python3 >/dev/null 2>&1 && python3 -c 'import graphify' >/dev/null 2>&1; } && mem=$((mem+1))
   printf "  memory brains    : %s/4\n" "$mem"
   [ "$mem" -ge 1 ] && ok "memory layer present" || warn "memory not installed, run bh memory install"
+  local st=0
+  [ -d "$HOME/.claude/skills/gstack" ] && st=$((st+1))
+  command -v claude >/dev/null 2>&1 && claude plugin list 2>/dev/null | grep -qi superpowers && st=$((st+1))
+  command -v claude >/dev/null 2>&1 && claude plugin list 2>/dev/null | grep -qi voltagent && st=$((st+1))
+  printf "  open stack       : %s/3 (gstack, superpowers, subagents)\n" "$st"
 }
 
 cmd_doctor() {
@@ -101,6 +107,8 @@ cmd_memory() {
   esac
 }
 
+cmd_stack() { bash "$HIVE_ROOT/harness/stack/install.sh" "$@"; }
+
 cmd_sync()   { git -C "$HIVE_ROOT" pull --ff-only && ok "synced"; }
 cmd_skills() {
   local mode="${1:-}"
@@ -128,6 +136,7 @@ case "${1:-help}" in
   start)   cmd_start;;
   init)    shift; cmd_init "$@";;
   memory)  shift; cmd_memory "$@";;
+  stack)   shift; cmd_stack "$@";;
   status)  cmd_status;;
   doctor)  cmd_doctor;;
   onboard) shift; cmd_onboard "$@";;

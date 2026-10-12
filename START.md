@@ -47,6 +47,14 @@ Then run, in order, and report each in one line:
 should show the skills count and green checks. Show them the count ("you now have N skills
 ready") and move on.
 
+## Step 2b · The stack (the best open tools, from their authors)
+
+Say plainly: "Now I am bringing in the best open tools for Claude Code, straight from the people who made them."
+Run `./bin/bh stack list`, then tell them in one line each what is coming: **gstack** (a software team: product
+review, QA in a real browser, ship), **superpowers** (the method: plan, test, debug), and **160+ specialist
+subagents**. Ask "all three?" and run `./bin/bh stack` (or only the pieces they want). For every `SKIP` line,
+offer to install the one missing tool it names, then re-run. Never block onboarding on this step.
+
 ## Step 3 · The memory (the four brains)
 
 This is the heart. Explain it simply first, in their language: "I am giving you four kinds

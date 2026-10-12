@@ -9,7 +9,7 @@ Most people run Claude Code bare. This is the harness around it.
 ```
 Install the Be Human Harness for me. Do exactly this:
 
-1. git clone https://github.com/hiivee/be-human-harness ~/be-human-harness
+1. git clone https://github.com/behumansi/harness ~/be-human-harness
 2. cd ~/be-human-harness
 3. Open START.md and run it: you become my onboarding guide and take me step by step,
    talking with me, until everything is live (who I am, the method, the memory layer
@@ -31,6 +31,7 @@ Portuguese prompt, terminal install and updates: [`INSTALL.md`](INSTALL.md). Pag
 | **Orchestration** | Fan out to read and verify, stay single threaded to write |
 | **Verify loop** | Refuses to say done without proof: a status code, a receipt, a passing test |
 | **Memory layer** | A living context file per project, so the next session resumes the thread |
+| **Open stack** | `bh stack` installs gstack, superpowers and 160+ specialist subagents from their authors' repos |
 | **`bh` CLI** | Installs, lists and curates the pieces |
 
 ## The skills, by domain

@@ -15,6 +15,21 @@ with them: where a skill folder carries a `LICENSE` file, that file governs that
 | `hyperframes`, `hyperframes-cli`, `hyperframes-media` | HeyGen, [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Apache 2.0 |
 | `contract-review` | see `skills/contract-review/LICENSE` | MIT |
 
+## The open stack (installed from the original repos, never copied)
+
+`bh stack` and `bh memory install` fetch these with each project's own installer, so you always get
+the authors' latest version and their licence applies directly:
+
+| Piece | Author / source | Licence |
+|---|---|---|
+| gstack (50+ skills: product review, QA in a real browser, ship) | Garry Tan, [garrytan/gstack](https://github.com/garrytan/gstack) | MIT |
+| superpowers (plugin) | Jesse Vincent, [obra/superpowers](https://github.com/obra/superpowers) | MIT |
+| 160+ specialist subagents | VoltAgent, [awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | MIT |
+| 94 workflow plugins, 200+ agents | Seth Hobson, [wshobson/agents](https://github.com/wshobson/agents) | MIT |
+| claude-mem (memory of past work) | Alex Newman, [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | Apache 2.0 |
+| semble (find code by meaning) | MinishLab, [MinishLab/semble](https://github.com/MinishLab/semble) | MIT |
+| graphify (knowledge graph) | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | Apache 2.0 |
+
 Everything else (the method in `CLAUDE.base.md`, `START.md`, the `bh` CLI, the `harness/`
 modules, the memory layout and the remaining skills) is by Be Human, MIT.
 

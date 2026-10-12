@@ -8,7 +8,7 @@ it clones the harness, wires the skills and the memory, and walks you through it
 ```
 Install the Be Human Harness for me. Do exactly this:
 
-1. git clone https://github.com/hiivee/be-human-harness ~/be-human-harness
+1. git clone https://github.com/behumansi/harness ~/be-human-harness
 2. cd ~/be-human-harness
 3. Open START.md and run it: you become my onboarding guide and take me step by step,
    talking with me, until everything is live (who I am, the method, the memory layer
@@ -22,7 +22,7 @@ Talk to me in my language, one step at a time, no jargon. Start now.
 ```
 Instale o Be Human Harness pra mim. Faça exatamente:
 
-1. git clone https://github.com/hiivee/be-human-harness ~/be-human-harness
+1. git clone https://github.com/behumansi/harness ~/be-human-harness
 2. cd ~/be-human-harness
 3. Abra o START.md e execute: você vira o meu guia de onboarding e me conduz passo a
    passo, conversando, até tudo estar no ar (quem eu sou, o método, a camada de memória
@@ -38,7 +38,7 @@ At the end it asks what you want to build first.
 ## Prefer the terminal?
 
 ```bash
-git clone https://github.com/hiivee/be-human-harness ~/be-human-harness
+git clone https://github.com/behumansi/harness ~/be-human-harness
 cd ~/be-human-harness
 ./bin/bh init "Your Name"
 ./bin/bh skills link
