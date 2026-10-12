@@ -1,0 +1,16 @@
+{
+  "name": "cold-email",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/benchmarks.md",
+    "references/follow-up-sequences.md",
+    "references/frameworks.md",
+    "references/personalization.md",
+    "references/subject-lines.md"
+  ],
+  "file_count": 7,
+  "has_scripts": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "sales-research",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md"
+  ],
+  "file_count": 1,
+  "has_scripts": false
+}

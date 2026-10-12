@@ -1,0 +1,11 @@
+{
+  "name": "requesting-code-review",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "code-reviewer.md"
+  ],
+  "file_count": 2,
+  "has_scripts": false
+}

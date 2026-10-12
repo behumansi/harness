@@ -1,0 +1,14 @@
+{
+  "name": "social-content",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/platforms.md",
+    "references/post-templates.md",
+    "references/reverse-engineering.md"
+  ],
+  "file_count": 5,
+  "has_scripts": false
+}

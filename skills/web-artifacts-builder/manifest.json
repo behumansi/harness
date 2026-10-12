@@ -1,0 +1,14 @@
+{
+  "name": "web-artifacts-builder",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "LICENSE.txt",
+    "SKILL.md",
+    "scripts/bundle-artifact.sh",
+    "scripts/init-artifact.sh",
+    "scripts/shadcn-components.tar.gz"
+  ],
+  "file_count": 5,
+  "has_scripts": true
+}

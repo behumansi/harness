@@ -1,0 +1,13 @@
+{
+  "name": "competitor-alternatives",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/content-architecture.md",
+    "references/templates.md"
+  ],
+  "file_count": 4,
+  "has_scripts": false
+}

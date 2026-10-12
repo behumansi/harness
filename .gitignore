@@ -1,0 +1,23 @@
+# be-human-harness: secrets NEVER enter git. Open source = zero credentials.
+.env
+.env.*
+*.key
+*.pem
+**/api-keys.md
+**/credentials.json
+**/.credentials.json
+**/tokens.json
+**/oauth-tokens/
+
+# user instance data (filled by `bh init`, stays private)
+brain/ME.md
+CLAUDE.md
+brain/*.private.md
+.bh/
+
+# runtime
+node_modules/
+.DS_Store
+*.log
+apps/
+.claude/settings.json

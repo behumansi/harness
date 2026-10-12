@@ -1,0 +1,14 @@
+{
+  "name": "paid-ads",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/ad-copy-templates.md",
+    "references/audience-targeting.md",
+    "references/platform-setup-checklists.md"
+  ],
+  "file_count": 5,
+  "has_scripts": false
+}

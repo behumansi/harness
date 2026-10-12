@@ -1,0 +1,19 @@
+{
+  "name": "contract-review",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "examples/balanced-agreement.md",
+    "examples/demo.png",
+    "examples/ma-agreement-review.md",
+    "examples/nda-review.md",
+    "examples/saas-agreement-review.md",
+    "skill.md"
+  ],
+  "file_count": 10,
+  "has_scripts": false
+}

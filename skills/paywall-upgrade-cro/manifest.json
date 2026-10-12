@@ -1,0 +1,12 @@
+{
+  "name": "paywall-upgrade-cro",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/experiments.md"
+  ],
+  "file_count": 3,
+  "has_scripts": false
+}

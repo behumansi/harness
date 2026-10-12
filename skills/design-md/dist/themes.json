@@ -1,0 +1,62 @@
+[
+  {
+    "name": "carbon",
+    "label": "Carbon",
+    "swatch": "#818cf8",
+    "mode": "dark"
+  },
+  {
+    "name": "claude-warm",
+    "label": "Claude Warm",
+    "swatch": "#cc785c",
+    "mode": "light"
+  },
+  {
+    "name": "dark-hub",
+    "label": "Slate",
+    "swatch": "#6f9fd8",
+    "mode": "dark"
+  },
+  {
+    "name": "bh",
+    "label": "Be Human",
+    "swatch": "#A7DC5B",
+    "mode": "dark"
+  },
+  {
+    "name": "ink-dark",
+    "label": "Ink Dark",
+    "swatch": "#d8a657",
+    "mode": "dark"
+  },
+  {
+    "name": "linear-mono",
+    "label": "Linear Mono",
+    "swatch": "#5b56e0",
+    "mode": "light"
+  },
+  {
+    "name": "paper-graphite",
+    "label": "Paper",
+    "swatch": "#c99a2e",
+    "mode": "light"
+  },
+  {
+    "name": "ppm",
+    "label": "PPM Pinhais",
+    "swatch": "#E53935",
+    "mode": "light"
+  },
+  {
+    "name": "sepia-note",
+    "label": "Sepia Note",
+    "swatch": "#8a5a2c",
+    "mode": "light"
+  },
+  {
+    "name": "white-editorial",
+    "label": "White Editorial",
+    "swatch": "#1a1c1b",
+    "mode": "light"
+  }
+]

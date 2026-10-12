@@ -1,0 +1,16 @@
+{
+  "name": "writing-skills",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "anthropic-best-practices.md",
+    "examples/CLAUDE_MD_TESTING.md",
+    "graphviz-conventions.dot",
+    "persuasion-principles.md",
+    "render-graphs.js",
+    "testing-skills-with-subagents.md"
+  ],
+  "file_count": 7,
+  "has_scripts": false
+}

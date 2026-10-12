@@ -1,0 +1,14 @@
+{
+  "name": "email-sequence",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/copy-guidelines.md",
+    "references/email-types.md",
+    "references/sequence-templates.md"
+  ],
+  "file_count": 5,
+  "has_scripts": false
+}

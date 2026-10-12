@@ -1,0 +1,13 @@
+{
+  "name": "copywriting",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/copy-frameworks.md",
+    "references/natural-transitions.md"
+  ],
+  "file_count": 4,
+  "has_scripts": false
+}

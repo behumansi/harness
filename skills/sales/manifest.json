@@ -1,0 +1,20 @@
+{
+  "name": "sales",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "scripts/analyze_prospect.py",
+    "scripts/contact_finder.py",
+    "scripts/generate_pdf_report.py",
+    "scripts/lead_scorer.py",
+    "templates/meeting-prep.md",
+    "templates/objection-playbook.md",
+    "templates/outreach-cold.md",
+    "templates/outreach-referral.md",
+    "templates/outreach-warm.md",
+    "templates/proposal-template.md"
+  ],
+  "file_count": 11,
+  "has_scripts": true
+}

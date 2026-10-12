@@ -1,0 +1,13 @@
+{
+  "name": "ad-creative",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/generative-tools.md",
+    "references/platform-specs.md"
+  ],
+  "file_count": 4,
+  "has_scripts": false
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ab-test-setup",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/sample-size-guide.md",
+    "references/test-templates.md"
+  ],
+  "file_count": 4,
+  "has_scripts": false
+}

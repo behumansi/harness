@@ -1,0 +1,11 @@
+{
+  "name": "slack-messaging",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "scripts/extract-tokens"
+  ],
+  "file_count": 2,
+  "has_scripts": true
+}

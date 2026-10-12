@@ -1,0 +1,13 @@
+{
+  "name": "subagent-driven-development",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "code-quality-reviewer-prompt.md",
+    "implementer-prompt.md",
+    "spec-reviewer-prompt.md"
+  ],
+  "file_count": 4,
+  "has_scripts": false
+}

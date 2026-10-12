@@ -1,0 +1,139 @@
+#!/usr/bin/env bash
+# bh: the be-human-harness CLI. One command surface for the harness.
+set -euo pipefail
+
+HIVE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+VERSION="0.1.0"
+
+c_grn=$'\033[32m'; c_dim=$'\033[2m'; c_bold=$'\033[1m'; c_red=$'\033[31m'; c_off=$'\033[0m'
+say() { printf "%s\n" "$*"; }
+ok()  { printf "${c_grn}✓${c_off} %s\n" "$*"; }
+warn(){ printf "${c_red}!${c_off} %s\n" "$*"; }
+
+usage() {
+  cat <<EOF
+${c_bold}bh${c_off} ${c_dim}v$VERSION${c_off} · your agent OS
+
+  ${c_bold}bh start${c_off}           begin the guided onboarding (the agent reads START.md and walks you through it)
+  ${c_bold}bh init${c_off}            seed this repo: CLAUDE.md + brain/ME.md from the base method
+  ${c_bold}bh memory [install]${c_off}  install the memory layer: the four brains
+  ${c_bold}bh status${c_off}          what's installed: skills, harness, brain, memory
+  ${c_bold}bh doctor${c_off}          health check: git, claude CLI, no staged secrets
+  ${c_bold}bh onboard <name>${c_off}  scaffold a fresh instance for someone else
+  ${c_bold}bh sync${c_off}            git pull latest harness
+  ${c_bold}bh skills [link]${c_off}   list shipped skills (link = symlink into ~/.claude/skills)
+  ${c_bold}bh wrapup${c_off}          end-of-work: how to close out (runs the wrapup discipline)
+EOF
+}
+
+cmd_init() {
+  local name="${1:-}"; local brand="${2:-}"
+  [ -z "$name" ] && { read -rp "Your name: " name; }
+  [ -z "$brand" ] && { read -rp "Your brand (blank ok): " brand || true; }
+  if [ -f "$HIVE_ROOT/CLAUDE.md" ]; then
+    warn "CLAUDE.md already exists, not overwriting. Edit it directly."
+  else
+    sed -e "s/{{NAME}}/${name}/g" -e "s/{{BRAND}}/${brand:-$name}/g" \
+      "$HIVE_ROOT/CLAUDE.base.md" > "$HIVE_ROOT/CLAUDE.md"
+    ok "CLAUDE.md generated for ${name}"
+  fi
+  if [ ! -f "$HIVE_ROOT/brain/ME.md" ]; then
+    cp "$HIVE_ROOT/brain/TEMPLATE.md" "$HIVE_ROOT/brain/ME.md"
+    ok "brain/ME.md created (private, gitignored). Fill it in."
+  fi
+  say ""
+  say "Next: open brain/ME.md, then run ${c_bold}bh status${c_off}."
+}
+
+cmd_status() {
+  say "${c_bold}be-human-harness${c_off} ${c_dim}@ $HIVE_ROOT${c_off}"
+  local sk; sk=$(find "$HIVE_ROOT/skills" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+  local hm; hm=$(find "$HIVE_ROOT/harness" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+  printf "  skills shipped   : %s\n" "$sk"
+  printf "  harness modules  : %s\n" "$hm"
+  [ -f "$HIVE_ROOT/CLAUDE.md" ] && ok "CLAUDE.md seeded" || warn "CLAUDE.md missing, run bh init"
+  [ -f "$HIVE_ROOT/brain/ME.md" ] && ok "brain/ME.md present" || warn "brain/ME.md missing, run bh init"
+  # memory layer: report which of the four brains are present
+  local mem=0
+  [ -d "$HIVE_ROOT/brain/memory" ] && mem=$((mem+1))
+  command -v claude >/dev/null 2>&1 && claude plugin list 2>/dev/null | grep -qi 'claude-mem' && mem=$((mem+1))
+  command -v claude >/dev/null 2>&1 && claude mcp list 2>/dev/null | grep -qi 'semble' && mem=$((mem+1))
+  { command -v python3 >/dev/null 2>&1 && python3 -c 'import graphify' >/dev/null 2>&1; } && mem=$((mem+1))
+  printf "  memory brains    : %s/4\n" "$mem"
+  [ "$mem" -ge 1 ] && ok "memory layer present" || warn "memory not installed, run bh memory install"
+}
+
+cmd_doctor() {
+  command -v git >/dev/null && ok "git" || warn "git not found"
+  command -v claude >/dev/null && ok "claude CLI" || warn "claude CLI not found (install Claude Code)"
+  # secret guard: nothing sensitive staged
+  if git -C "$HIVE_ROOT" rev-parse --git-dir >/dev/null 2>&1; then
+    local leak; leak=$(git -C "$HIVE_ROOT" diff --cached --name-only 2>/dev/null | grep -iE '\.env|api-keys|credentials|tokens\.json|\.pem|\.key' || true)
+    [ -z "$leak" ] && ok "no secrets staged" || { warn "SECRET STAGED: $leak"; return 1; }
+  fi
+}
+
+cmd_onboard() {
+  local who="${1:?usage: bh onboard <name>}"
+  local dest="${2:-$HOME/code/${who}-os}"
+  [ -e "$dest" ] && { warn "$dest exists"; return 1; }
+  git -C "$HIVE_ROOT" archive HEAD 2>/dev/null | (mkdir -p "$dest" && tar -x -C "$dest") \
+    || { mkdir -p "$dest"; rsync -a --exclude '.git' --exclude 'brain/ME.md' "$HIVE_ROOT/" "$dest/"; }
+  ok "instance scaffolded → $dest"
+  say "Next: cd $dest && ./bin/bh init \"$who\""
+}
+
+cmd_start() {
+  say "${c_bold}Be Human Harness onboarding${c_off}"
+  say ""
+  say "The guided setup lives in ${c_bold}START.md${c_off}. In Claude Code, just say:"
+  say "  ${c_dim}\"read START.md and onboard me\"${c_dim}${c_off}"
+  say ""
+  say "The agent then walks you through identity, the method, the memory layer,"
+  say "and connecting your tools, one step at a time, until you're live."
+}
+
+cmd_memory() {
+  local mode="${1:-install}"
+  case "$mode" in
+    install|"") bash "$HIVE_ROOT/harness/memory/install.sh"; cmd_status | grep -i memory || true;;
+    *) warn "usage: bh memory install";;
+  esac
+}
+
+cmd_sync()   { git -C "$HIVE_ROOT" pull --ff-only && ok "synced"; }
+cmd_skills() {
+  local mode="${1:-}"
+  find "$HIVE_ROOT/skills" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; 2>/dev/null | sort
+  if [ "$mode" = "link" ]; then
+    mkdir -p "$HOME/.claude/skills"
+    find "$HIVE_ROOT/skills" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | while read -r d; do
+      ln -sfn "$d" "$HOME/.claude/skills/$(basename "$d")"
+    done
+    ok "skills symlinked into ~/.claude/skills"
+  fi
+}
+cmd_wrapup() {
+  say "End-of-work discipline (the spine, step 5):"
+  say "  1. learn   · capture what was non-obvious"
+  say "  2. commit  · conventional commit, your paths only"
+  say "  3. push    · only with confirmation"
+  say "  4. verify  · E2E proof before 'done'"
+  say "  5. notify  · update whiteboard.md + tell the team"
+  say ""
+  say "In Claude Code: just say 'wrapup'."
+}
+
+case "${1:-help}" in
+  start)   cmd_start;;
+  init)    shift; cmd_init "$@";;
+  memory)  shift; cmd_memory "$@";;
+  status)  cmd_status;;
+  doctor)  cmd_doctor;;
+  onboard) shift; cmd_onboard "$@";;
+  sync)    cmd_sync;;
+  skills)  shift; cmd_skills "$@";;
+  wrapup)  cmd_wrapup;;
+  -v|--version) say "bh v$VERSION";;
+  help|-h|--help|*) usage;;
+esac

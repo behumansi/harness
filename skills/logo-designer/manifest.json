@@ -1,0 +1,11 @@
+{
+  "name": "logo-designer",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "scripts/export.sh"
+  ],
+  "file_count": 2,
+  "has_scripts": true
+}

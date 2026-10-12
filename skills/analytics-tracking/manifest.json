@@ -1,0 +1,14 @@
+{
+  "name": "analytics-tracking",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/event-library.md",
+    "references/ga4-implementation.md",
+    "references/gtm-implementation.md"
+  ],
+  "file_count": 5,
+  "has_scripts": false
+}

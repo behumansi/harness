@@ -1,0 +1,12 @@
+{
+  "name": "lead-magnets",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "references/benchmarks.md",
+    "references/format-guide.md"
+  ],
+  "file_count": 3,
+  "has_scripts": false
+}

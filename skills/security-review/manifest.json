@@ -1,0 +1,11 @@
+{
+  "name": "security-review",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "cloud-infrastructure-security.md"
+  ],
+  "file_count": 2,
+  "has_scripts": false
+}

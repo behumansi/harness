@@ -1,0 +1,22 @@
+{
+  "name": "theme-factory",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "LICENSE.txt",
+    "SKILL.md",
+    "theme-showcase.pdf",
+    "themes/arctic-frost.md",
+    "themes/botanical-garden.md",
+    "themes/desert-rose.md",
+    "themes/forest-canopy.md",
+    "themes/golden-hour.md",
+    "themes/midnight-galaxy.md",
+    "themes/modern-minimalist.md",
+    "themes/ocean-depths.md",
+    "themes/sunset-boulevard.md",
+    "themes/tech-innovation.md"
+  ],
+  "file_count": 13,
+  "has_scripts": false
+}

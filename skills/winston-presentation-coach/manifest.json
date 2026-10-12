@@ -1,0 +1,18 @@
+{
+  "name": "winston-presentation-coach",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "README.md",
+    "SKILL.md",
+    "assets/intake-questions.md",
+    "references/01-opening.md",
+    "references/02-memorability.md",
+    "references/03-structure.md",
+    "references/04-slides.md",
+    "references/05-full-build.md",
+    "winston-complete-guide.pdf"
+  ],
+  "file_count": 9,
+  "has_scripts": false
+}

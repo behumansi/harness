@@ -1,0 +1,12 @@
+{
+  "name": "gsap",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "references/effects.md",
+    "scripts/extract-audio-data.py"
+  ],
+  "file_count": 3,
+  "has_scripts": true
+}

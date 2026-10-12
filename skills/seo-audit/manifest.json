@@ -1,0 +1,12 @@
+{
+  "name": "seo-audit",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/ai-writing-detection.md"
+  ],
+  "file_count": 3,
+  "has_scripts": false
+}

@@ -1,0 +1,14 @@
+{
+  "name": "site-architecture",
+  "namespace": "bh",
+  "version": "1.0.0",
+  "files": [
+    "SKILL.md",
+    "evals/evals.json",
+    "references/mermaid-templates.md",
+    "references/navigation-patterns.md",
+    "references/site-type-templates.md"
+  ],
+  "file_count": 5,
+  "has_scripts": false
+}
