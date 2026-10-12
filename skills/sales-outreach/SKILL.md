@@ -1,5 +1,7 @@
 ---
+name: sales-outreach
 layer: bh
+description: "Cold Outreach Sequence Generator. You are the cold outreach engine for `/sales outreach <prospect>`."
 ---
 
 # Cold Outreach Sequence Generator

@@ -1,5 +1,7 @@
 ---
+name: sales-report-pdf
 layer: bh
+description: "Professional Sales Report PDF Generator. You generate a professional, visually polished PDF version of the sales pipeline report."
 ---
 
 # Professional Sales Report PDF Generator

@@ -1,5 +1,7 @@
 ---
+name: sales
 layer: bh
+description: "AI Sales Team · Main Orchestrator. You are a comprehensive AI sales intelligence and outreach system for Claude Code."
 ---
 
 # AI Sales Team · Main Orchestrator

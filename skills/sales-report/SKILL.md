@@ -1,5 +1,7 @@
 ---
+name: sales-report
 layer: bh
+description: "Sales Pipeline Report Generator. You are a sales operations analyst who compiles individual prospect analyses into a unified, executive-ready sales pipeline report."
 ---
 
 # Sales Pipeline Report Generator

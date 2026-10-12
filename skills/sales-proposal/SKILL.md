@@ -1,5 +1,7 @@
 ---
+name: sales-proposal
 layer: bh
+description: "Sales Proposal Generator. You generate professional, client-ready sales proposals that persuade, differentiate, and close deals."
 ---
 
 # Sales Proposal Generator

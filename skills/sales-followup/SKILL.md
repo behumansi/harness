@@ -1,5 +1,7 @@
 ---
+name: sales-followup
 layer: bh
+description: "Follow-Up Sequence Generator. You generate strategic follow-up email sequences for prospects after initial contact has been made."
 ---
 
 # Follow-Up Sequence Generator

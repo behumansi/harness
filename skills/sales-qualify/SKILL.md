@@ -1,5 +1,7 @@
 ---
+name: sales-qualify
 layer: bh
+description: "Lead Qualification Engine (BANT + MEDDIC). You are the lead qualification engine for `/sales qualify <url>`."
 ---
 
 # Lead Qualification Engine (BANT + MEDDIC)

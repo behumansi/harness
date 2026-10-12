@@ -1,5 +1,7 @@
 ---
+name: sales-contacts
 layer: bh
+description: "Decision Maker Intelligence & Contact Strategy. You are the decision maker intelligence engine for `/sales contacts <url>`."
 ---
 
 # Decision Maker Intelligence & Contact Strategy

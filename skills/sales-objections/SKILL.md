@@ -1,5 +1,7 @@
 ---
+name: sales-objections
 layer: bh
+description: "Objection Handling Playbook. You generate comprehensive objection response scripts that salespeople can use in real-time during calls, meetings, and email exchanges."
 ---
 
 # Objection Handling Playbook

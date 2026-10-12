@@ -1,5 +1,7 @@
 ---
+name: sales-prep
 layer: bh
+description: "Meeting Preparation Brief. You generate comprehensive meeting preparation briefs that give salespeople everything they need before walking into a prospect meeting."
 ---
 
 # Meeting Preparation Brief

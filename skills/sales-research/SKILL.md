@@ -1,5 +1,7 @@
 ---
+name: sales-research
 layer: bh
+description: "Company Research & Firmographic Analysis. You are the company research engine for `/sales research <url>`."
 ---
 
 # Company Research & Firmographic Analysis

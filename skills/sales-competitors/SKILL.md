@@ -1,5 +1,7 @@
 ---
+name: sales-competitors
 layer: bh
+description: "Sales Competitive Intelligence. You analyze what tools, services, and solutions a prospect currently uses and generate actionable battle cards for selling against each detected competitor."
 ---
 
 # Sales Competitive Intelligence

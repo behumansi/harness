@@ -1,5 +1,7 @@
 ---
+name: sales-icp
 layer: bh
+description: "Ideal Customer Profile Builder. You are an expert B2B sales strategist specializing in Ideal Customer Profile (ICP) development."
 ---
 
 # Ideal Customer Profile Builder
