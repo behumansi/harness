@@ -30,7 +30,7 @@ Gera ilustrações pixel art 16-bit isométricas no estilo cofounder.co. Visual 
 bash ~/.claude/skills/pixel-art/gen.sh <slug> "<scene-body>" [ref_image_url]
 ```
 
-- `<slug>` · nome do arquivo (ex: `steve-hero`, `dashboard-card-1`)
+- `<slug>` · nome do arquivo (ex: `product-hero`, `dashboard-card-1`)
 - `<scene-body>` · descrição da cena em inglês, foco no que está na imagem
 - `[ref_image_url]` · opcional, imagem de referência pra style transfer
 
@@ -54,11 +54,11 @@ Env overrides:
 - Detalhes vivos: flores amarelas, banco de parque, caminho de terra, prédios distantes
 - **Sem texto na imagem** (texto vem por overlay HTML/CSS)
 
-## Cenas recomendadas pra Steve OS
+## Cenas de exemplo (landing de produto)
 
 ```bash
-# Hero principal · landing /welcome
-bash gen.sh steve-hero "An isometric pixel art landscape: green grassy field foreground with yellow wildflowers and a wooden park bench on the left, a small open laptop sitting on the grass in the right-third of the frame with a tiny pixel-art cloud-shaped icon glowing on its screen, large lush pixel trees framing the right edge, a distant pixel city skyline of soft purple-gray buildings on the horizon center-left, big chunky cumulus clouds in pastel blue sky, dirt path winding through the grass, morning light, no people, no text, atmospheric depth"
+# Hero principal da landing
+bash gen.sh product-hero "An isometric pixel art landscape: green grassy field foreground with yellow wildflowers and a wooden park bench on the left, a small open laptop sitting on the grass in the right-third of the frame with a tiny pixel-art cloud-shaped icon glowing on its screen, large lush pixel trees framing the right edge, a distant pixel city skyline of soft purple-gray buildings on the horizon center-left, big chunky cumulus clouds in pastel blue sky, dirt path winding through the grass, morning light, no people, no text, atmospheric depth"
 
 # Card 1 · Conversa multi-canal
 bash gen.sh card-conversa "Cozy isometric pixel art bedroom interior at dawn, a wooden desk by an open window with a small open laptop showing chat bubbles, sunlight pouring in golden, plant on windowsill, warm wood floor, books stacked, no people, no text, soft palette" 1:1

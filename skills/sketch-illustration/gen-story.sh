@@ -5,7 +5,7 @@ set -euo pipefail
 
 TOKEN="${TOKEN:-${REPLICATE_API_TOKEN:?Set REPLICATE_API_TOKEN to your own Replicate key}}"
 MODEL="${MODEL:-google/nano-banana-2}"
-OUT_DIR="${OUT_DIR:-~/code/your-reports-repo/public/ativos/sketch-tests}"
+OUT_DIR="${OUT_DIR:-./sketches}"
 mkdir -p "$OUT_DIR"
 
 SLUG="$1"

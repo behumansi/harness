@@ -10,7 +10,7 @@
 #                 Key in $OPENROUTER_API_KEY or /Users/you/.claude/credentials/openrouter.env
 #
 # Style "cycle" rotaciona segundo styles.json._rotation_order via .last-style
-# Output: ~/code/your-reports-repo/public/ativos/sketch-tests/<slug>.png
+# Output: ./sketches/<slug>.png
 #
 # People mode (when style has needs_image_input=true):
 #   Arg 3 = comma-separated people slugs (e.g. "subject" or "subject,person-two")
@@ -20,7 +20,7 @@
 
 set -euo pipefail
 
-OUT_DIR="${OUT_DIR:-~/code/your-reports-repo/public/ativos/sketch-tests}"
+OUT_DIR="${OUT_DIR:-./sketches}"
 SKILL_DIR="$HOME/.claude/skills/sketch-illustration"
 STYLES_JSON="$SKILL_DIR/styles.json"
 LAST_STYLE_FILE="$SKILL_DIR/.last-style"

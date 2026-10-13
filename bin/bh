@@ -3,7 +3,7 @@
 set -euo pipefail
 
 HIVE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="1.1.0"
+VERSION="1.1.1"
 
 c_grn=$'\033[32m'; c_dim=$'\033[2m'; c_bold=$'\033[1m'; c_red=$'\033[31m'; c_off=$'\033[0m'
 say() { printf "%s\n" "$*"; }
@@ -12,7 +12,7 @@ warn(){ printf "${c_red}!${c_off} %s\n" "$*"; }
 
 usage() {
   cat <<EOF
-${c_bold}bh${c_off} ${c_dim}v$VERSION${c_off} · your agent OS
+${c_bold}bh${c_off} ${c_dim}v$VERSION${c_off} · your agent OS · powered by Be Human
 
   ${c_bold}bh start${c_off}           begin the guided onboarding (the agent reads START.md and walks you through it)
   ${c_bold}bh init${c_off}            seed this repo: CLAUDE.md + brain/ME.md from the base method

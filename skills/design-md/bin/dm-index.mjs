@@ -4,7 +4,7 @@
    design-md temável com grid de cards. Roda dm-build no final.
 
    Usage:  node bin/dm-index.mjs <reports-dir>
-   Ex:     node bin/dm-index.mjs /caminho/your-reports-repo/public/reports
+   Ex:     node bin/dm-index.mjs /path/to/your/reports
 
    Rodar sempre que gerar um doc novo · o menu se mantém atualizado. */
 
@@ -82,7 +82,7 @@ ${cards}
   </div>
 
   <div class="dm-footer">
-    <span>your-reports-repo/public/reports · design-md</span>
+    <span>reports · design-md</span>
     <span>índice gerado ${new Date().toLocaleString('pt-BR')}</span>
   </div>
 

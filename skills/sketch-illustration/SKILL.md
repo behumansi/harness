@@ -14,7 +14,7 @@ Generate hand-drawn explainer illustrations that look like a senior designer ske
 - "sketch pra explicar como X funciona"
 - "diagrama hand-drawn"
 - "criar imagem com logos e setas"
-- Reference image like the [public/ativos/sketch-tests/wrapper-banana-pro-v1.png](../../../code/your-reports-repo/public/ativos/sketch-tests/wrapper-banana-pro-v1.png) ("THE WRAPPER" diagram)
+- Reference image like the `wrapper-banana-pro-v1.png` ("THE WRAPPER" diagram)
 
 ## Model selection (always Replicate)
 
@@ -54,7 +54,7 @@ Hand-drawn editorial illustration in mixed-media style: confident black ink line
 Describe in plain English what's in the picture. Be explicit about:
 - **What's where**: "Left side: X. Center: Y. Right side: Z."
 - **Labels**: every important element gets a hand-lettered label in quotes
-- **Arrows**: name them ("arrow labeled 'steve update' in orange marker")
+- **Arrows**: name them ("arrow labeled 'sync' in orange marker")
 - **Logos by brand name + colored description**: `"WhatsApp green speech-bubble"`, `"Gmail multicolor envelope"`. Not just `"WhatsApp logo"`.
 - **Mascot/character**: describe accessories ("captain hat", "magnifying glass", "coffee cup") so each scene's character looks consistent
 - **Caption** at bottom in 1-2 lines, with which words to highlight in orange/teal
@@ -104,7 +104,7 @@ bash ~/.claude/skills/sketch-illustration/gen.sh <slug> "<scene>" [ref_url]
 # v3 editorial · 9:16 story / post
 bash ~/.claude/skills/sketch-illustration/gen-story.sh <slug> "<scene>" [ref_url]
 
-# Output: ~/code/your-reports-repo/public/ativos/sketch-tests/<slug>.png
+# Output: ./sketches/<slug>.png
 ```
 
 Env overrides: `MODEL=google/nano-banana-pro`, `OUT_DIR=/some/path`, `TOKEN=r8_...`, `ASPECT=1:1` (gen.sh only).
@@ -167,7 +167,7 @@ PAYLOAD=$(jq -n --arg p "$PROMPT" --arg j "$subject" --arg c "$CLAUDE" \
 | Issue | Fix |
 |---|---|
 | Logo errado / genérico | Adicionar cor + forma na descrição: `"Gmail red-white-blue M envelope"` em vez de `"Gmail logo"` |
-| Label embaralhado | Pôr o texto entre aspas: `labeled "STEVE"` em vez de `labeled STEVE` |
+| Label embaralhado | Pôr o texto entre aspas: `labeled "AGENT"` em vez de `labeled AGENT` |
 | Composição cheia demais | Cortar elementos. Máx 7-9 itens nomeados por sketch. |
 | Tenant names errados em sketch multi-tenant | Modelo às vezes copia primeiro nome em todos. Mitigação: enfatizar diferença `"three different VPS boxes labeled 'subject', 'person-two', 'ADRIANO' (each a different name)"` |
 | Cor monocromática (só preto+laranja) | Adicionar 2-3 logos coloridos no SCENE pra forçar paleta |
@@ -175,33 +175,19 @@ PAYLOAD=$(jq -n --arg p "$PROMPT" --arg j "$subject" --arg c "$CLAUDE" \
 
 ## Output destination
 
-Default: `~/code/your-reports-repo/public/ativos/sketch-tests/`
-
-For client use:
-- Steve OS marketing → `~/code/Steve OS/steve-os-engine/app/public/diagramas/steve-os/sketches/`
-- Propostas → `~/code/your-reports-repo/public/propostas/<cliente>/sketches/`
-- Posts/social → `~/code/your-reports-repo/public/ativos/sketches/<topic>/`
-
-After save, if for hub URL: middleware whitelist may need update (`PUBLIC_STATIC_PAGES`) and `pm2 restart your-app` after scp pra prod.
+Default: `./sketches/` in the current project. Put client or campaign sets in their own subfolder (`./sketches/<topic>/`).
 
 ## Cost reference
 
 | Volume | Cost (banana-2) |
 |---|---|
 | 1 image | $0.05 |
-| 5-image set (Steve OS pitch) | $0.25 |
+| 5-image set (a pitch) | $0.25 |
 | 20-image landing page | $1.00 |
 | 100-image campaign | $5.00 |
 
 Cheap. Do batches without worrying.
 
-## Examples (reference outputs)
-
-- [wrapper-v2.png](../../../code/your-reports-repo/public/ativos/sketch-tests/wrapper-v2.png) · recreates "THE WRAPPER" reference 1:1 with real logos
-- [steve-01-mascot.png](../../../code/your-reports-repo/public/ativos/sketch-tests/steve-01-mascot.png) · character + flood input + structured output
-- [steve-02-engine-soul.png](../../../code/your-reports-repo/public/ativos/sketch-tests/steve-02-engine-soul.png) · two-container compare diagram with arrow
-- [steve-04-lifecycle.png](../../../code/your-reports-repo/public/ativos/sketch-tests/steve-04-lifecycle.png) · circular 5-step loop
-- [steve-05-resilience.png](../../../code/your-reports-repo/public/ativos/sketch-tests/steve-05-resilience.png) · lighthouse + monitored workers + recovery labels
 
 ## Voice triggers
 

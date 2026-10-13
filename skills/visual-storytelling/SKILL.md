@@ -11,7 +11,7 @@ layer: bh
 
 Build visual documents that **tell a story**, not list facts. The reader scrolls and feels a journey: where we are, what we built, what is on the table, what the prize is, the invite. Artistic, raw, foda. Not corporate, not cute.
 
-Canonical example, study it first: `your-reports-repo/public/reports/bh-onboarding/` (`index.html` slide deck + `canvas.html` infinite scroll). Built and approved by the user, May 2026.
+Canonical example, study it first: `a short onboarding deck of your own` (`index.html` slide deck + `canvas.html` infinite scroll). Built and approved by the user, May 2026.
 
 ## When to use
 
@@ -87,7 +87,7 @@ Adapt the beats to the subject. Always: real data only, lead with strength (neve
 
 ## Brand marks
 
-Use the real client/company logo, never a guessed one. Be Human logo lives at `your-reports-repo/public/propostas/_template-proposta/bh-logo.svg` (lime hexagon `#D4FE5E` + wordmark). Render brand marks crisp · do not apply the chalk filter to a real logo.
+Use the real client/company logo, never a guessed one. Your logo lives at `your-assets/public/propostas/_template-proposta/bh-logo.svg` (lime hexagon `#D4FE5E` + wordmark). Render brand marks crisp · do not apply the chalk filter to a real logo.
 
 ## Build checklist
 

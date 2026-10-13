@@ -1,27 +1,21 @@
 {
-  "_doc": "Registry de estilos pra sketch-illustration. the user nomeia novos estilos, eu seedo o JSON. save-historia.sh --style <nome> usa o prompt daqui. Cycle rotation lê .last-style.",
-  "_rotation_order": ["infografico", "historia", "diagrama"],
-  "_people_root": "~/code/your-reports-repo/public/_shared/people",
-  "_people_url_base": "https://your-host.example.com/_shared/people",
+  "_doc": "Style registry for sketch-illustration. Add your own styles here; gen.sh --style <name> uses the prompt from this file.",
+  "_rotation_order": [
+    "infografico",
+    "diagrama"
+  ],
   "_providers": {
-    "replicate": {"endpoint": "https://api.replicate.com/v1/models/{model}/predictions", "key_file": "/Users/you/.claude/credentials/replicate.env", "key_env": "REPLICATE_API_TOKEN"},
-    "openrouter": {"endpoint": "https://openrouter.ai/api/v1/chat/completions", "key_file": "/Users/you/.claude/credentials/openrouter.env", "key_env": "OPENROUTER_API_KEY"}
+    "replicate": {
+      "endpoint": "https://api.replicate.com/v1/models/{model}/predictions",
+      "key_file": "~/.config/sketch-illustration/keys.env",
+      "key_env": "REPLICATE_API_TOKEN"
+    },
+    "openrouter": {
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+      "key_file": "~/.config/sketch-illustration/keys.env",
+      "key_env": "OPENROUTER_API_KEY"
+    }
   },
-
-  "retrato": {
-    "label": "Portrait story (solo or duo) · brand-merged, face-precise",
-    "aspect_ratio": "9:16",
-    "provider": "openrouter",
-    "model": "google/gemini-3.1-flash-image-preview",
-    "cost_usd": 0.04,
-    "needs_image_input": true,
-    "supports_multi_ref": true,
-    "brand_merge_rule": "host_dominates_guest_accents",
-    "when_to_use": "Retrato pessoal of the user ou duo the user+colaborador onde brand books precisam fundir. Use quando the user disser 'retrato', 'foto pra história', 'cena com [pessoa]', 'eu e [pessoa]'. Sempre passa --with <slugs> separado por vírgula. Primeiro slug = host (palette dominante), demais = guests (accents).",
-    "prefix": "Cinematic editorial portrait photograph, A24 production still aesthetic, hyperdetailed naturalistic faces. Style reference: Annie Leibovitz portrait + Bradford Young color + Wes Anderson framing precision but warm and lived-in. Shot on Arri Alexa with 50mm prime lens, shallow depth of field, soft volumetric light, gentle film grain. Photographic realism: pores, fabric weave, individual beard hairs, dust suspended in light. ABSOLUTE FACE FIDELITY: every subject's face must match the provided reference photos precisely · same eyes, same nose shape, same beard density, same haircut, same skin tone, same expression character. Use the appearance_anchors from each subject's brand-ref to lock identity. Use real recognizable brand objects when shown. Setting: real lived-in space with personality, props specific and named. NOT cartoonish, NOT illustrated, NOT painted, NOT 3D-render · photographic, hyperreal, intimate, documentary.",
-    "suffix": "Aspect ratio 9:16 (vertical Instagram Story). 8K detail. Editorial portrait framing. Mood: A24 documentary intimacy, the kind of frame that tells a relationship in one image. BRAND MERGE: host palette dominates the overall light/wardrobe/architecture (~80% of the frame). Guest accents appear as 10-20% of the composition · a lamp, an object, a wardrobe element, a screen glow · placed near or on the guest subject. Coherent across stories, never split-screen, never neutral fusion. Caption text only if specified in scene; otherwise zero overlay text."
-  },
-
   "infografico": {
     "label": "Sketch editorial hand-drawn (Christoph Niemann + Tim Urban)",
     "aspect_ratio": "9:16",
@@ -32,7 +26,6 @@
     "prefix": "Hand-drawn editorial illustration in mixed-media style: confident black ink line-work + watercolor wash backgrounds + colored marker fills. Style reference: New York Times explainer illustration, Christoph Niemann, modern visual essay. Colors: warm paper texture base #FAF6EE, with VIBRANT filled regions in warm orange #E97A4F, muted teal #4A9B95, warm yellow #F5C04A, soft coral #F0876B, dusty blue #6B9BD2, sage green #8AB97F. Color is APPLIED LIBERALLY across backgrounds, character clothes, object fills, not just accent dots. Real recognizable brand logos with their official brand colors when shown. Hand-lettered marker typography. Setting: include scene context (a room, a desk, a city skyline, a workshop), not floating elements on white. Paper texture visible behind everything. Generous orange marker arrows connecting beats.",
     "suffix": "Aspect ratio 9:16 (vertical Instagram Story / Reels format). Style reference: Christoph Niemann + Maira Kalman + Tim Urban illustrated essay. Crisp readable hand-lettered text. Story format: clear top headline, central illustration, bottom callout/CTA. Designed for social media share, bold enough to read on phone, warm enough to feel human."
   },
-
   "diagrama": {
     "label": "Whiteboard minimal 16:9 (técnico, propostas, slides)",
     "aspect_ratio": "16:9",
@@ -42,16 +35,5 @@
     "when_to_use": "Explicar arquitetura, propostas técnicas, slides, infraestrutura, fluxo entre componentes",
     "prefix": "Hand-drawn ink illustration on warm off-white paper background, sketchy line-art with confident black ink strokes, hand-lettered marker typography. Color palette: black ink line-work + bold accent colors used selectively (warm orange #E97A4F as primary accent, plus muted teal #4A9B95 and warm yellow #F5C04A for secondary highlights). Use REAL recognizable brand logos with their official brand colors when shown. Logos must be drawn loose and sketchy but unmistakable. Layout: clean composition, generous white space, hand-drawn arrows in orange connecting elements, casual hand-lettered all-caps labels.",
     "suffix": "Aspect ratio 16:9. Style reference: whiteboard explainer drawn by a senior designer, like a Pixar storyboard or Tim Urban Wait But Why illustration. Crisp readable text, sketchy but professional."
-  },
-
-  "historia": {
-    "label": "Cinematic documentary photoreal hiper-detalhado",
-    "aspect_ratio": "9:16",
-    "provider": "openrouter",
-    "model": "google/gemini-3.1-flash-image-preview",
-    "cost_usd": 0.04,
-    "when_to_use": "Diário visual da vida of the user, documentar momento real, frame de filme/documentário, NÃO cartunesco. Quando the user disse 'pra contar minha história'.",
-    "prefix": "Cinematic documentary photograph, hyperdetailed naturalistic scene. Style reference: A24 production still, Roger Deakins lighting, Bradford Young color, Wes Anderson framing precision but warm and lived-in. Shot on Arri Alexa with Cooke Anamorphic lens, shallow depth of field, soft volumetric light, gentle film grain. Color palette: warm tungsten + cool blue screen glow + amber desk lamp + matte black accents. Photographic realism, pores, fabric texture, paper grain, dust suspended in light beams visible. Subject's face matches the reference photo precisely: same eyes, same nose shape, same expression, same haircut, same skin tone, same beard density. Setting: real lived-in space with personality, not a generic stage. Every prop in the frame must be specific and named, visible sticky notes with handwritten text, real screens with readable code or dashboards, real books with visible spines, real objects scattered with intent. The viewer should be able to read the day from the scene like a forensic document of one founder's night. NOT cartoonish, NOT illustrated, NOT painted, NOT anime, NOT 3D-render, photographic, hyperreal, intimate, documentary.",
-    "suffix": "Aspect ratio 9:16 (vertical Instagram Story). 8K detail. Movie-still framing. Subject occupies center-third, environment dense with story details readable on phone screen. Mood: late-night focused intensity, the kind of scene a documentary cinematographer would frame to tell a chapter of a life in one image. Caption text only if specified in scene; otherwise zero overlay text · let the scene speak."
   }
 }

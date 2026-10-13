@@ -120,7 +120,7 @@ export class ArchNodeShapeUtil extends ShapeUtil<ArchNodeShape> {
 
 Variantes:
 - `default` · node normal, fundo `#1a1a1a`, borda colorida sólida
-- `deep` · usado pra L2/Steve, gradient `#1a1428 → #14101f` pra dar peso
+- `deep` · usado pra camadas internas do agente, gradient `#1a1428 → #14101f` pra dar peso
 - `frame` · container do servidor, borda tracejada amarela, label superior em mono uppercase
 
 ---
@@ -164,7 +164,7 @@ Lista completa: https://icon-sets.iconify.design/
 
 ## Hosting + Save/Push workflow (DEFAULT)
 
-**Standalone (dev/atual):** `~/code/tldraw-diagrams/` · Vite + React, `npm run dev` em :5173.
+**Standalone (dev/atual):** `./tldraw-diagrams/` · Vite + React, `npm run dev` em :5173.
 URL: `http://localhost:5173/?c=<cliente>`
 
 ### Workflow oficial · Save/Push
@@ -234,8 +234,8 @@ Snapshot é arquivo estático servido por `/public/`. Atualiza JSON → próxima
 ## Referência de arquivos
 
 - Skill: `~/.claude/skills/architecture-diagram/SKILL.md` (este arquivo)
-- Editor standalone: `~/code/tldraw-diagrams/`
-- Custom shape: `~/code/tldraw-diagrams/src/ArchNodeShape.tsx`
-- Configs: `~/code/tldraw-diagrams/src/configs.ts`
-- HTML template (alternativa estática): `~/code/your-reports-repo/public/ativos/arquitetura-template/`
-- Hub embed (futuro): `~/code/your-reports-repo/src/app/(protected)/diagramas/[client]/[slug]/page.tsx`
+- Editor standalone: `./tldraw-diagrams/`
+- Custom shape: `./tldraw-diagrams/src/ArchNodeShape.tsx`
+- Configs: `./tldraw-diagrams/src/configs.ts`
+- HTML template (alternativa estática): `./diagrams/template/`
+- Hub embed (futuro): `your app's diagrams page`

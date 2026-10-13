@@ -88,3 +88,7 @@ MIT. Use it commercially, rebrand it, sell work built with it. No attribution re
 ## Credits
 
 Some skills are by other authors and keep their own licences. See [`THIRD_PARTY.md`](THIRD_PARTY.md).
+
+---
+
+**Powered by [Be Human](https://be-human.ai)** · we build AI agents that stay human. The harness is free and stays free. If you want to scale what you build with agents, we mentor founders and teams and set it up with you: [be-human.ai/free](https://be-human.ai/free/#help).

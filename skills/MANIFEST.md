@@ -150,4 +150,3 @@ Além do core de processo/eng acima, o kit agora traz as skills de operação da
 - **Eng disciplina:** `skill-creator · writing-skills · executing-plans · using-git-worktrees · subagent-driven-development · mcp-builder · eval-harness · devex-review`
 - **Ferramentas (Tier 2):** `composio-cli · slack-messaging · mcp-cli · generate-image · transcribe-video · make-pdf · hyperframes · hyperframes-cli · hyperframes-media · contract-review · document-generate · architecture-diagram`
 
-> Skills pessoais/de cliente/marca (steve*, mycelium*, ckm*, bh-prospect, casa, etc.) NÃO entram aqui: ficam no harness privado of the user.
