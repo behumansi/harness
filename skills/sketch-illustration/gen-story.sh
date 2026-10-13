@@ -54,4 +54,3 @@ echo "[$SLUG] saved → $OUT_DIR/$SLUG.png ($(ls -lh "$OUT_DIR/$SLUG.png" | awk 
 [ "${NO_OPEN:-}" != "1" ] && open "$OUT_DIR/$SLUG.png" 2>/dev/null || true
 
 # Refresh gallery index
-bash "$(dirname "$0")/refresh-gallery.sh" "$OUT_DIR" >/dev/null 2>&1 || true

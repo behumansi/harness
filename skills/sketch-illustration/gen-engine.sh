@@ -78,6 +78,7 @@ PEOPLE_BLOCK=""
 if [ -n "$REF_OR_PEOPLE" ] && [[ ! "$REF_OR_PEOPLE" =~ ^https?:// ]]; then
   PEOPLE_ROOT=$(jq -r '._people_root' "$STYLES_JSON")
   PEOPLE_URL_BASE=$(jq -r '._people_url_base' "$STYLES_JSON")
+  if [ "$PEOPLE_ROOT" = null ] || [ "$PEOPLE_URL_BASE" = null ]; then echo "People references are not configured. Pass an image URL instead, or add _people_root and _people_url_base to styles.json." >&2; exit 2; fi
 
   IFS=',' read -ra SLUGS <<< "$REF_OR_PEOPLE"
   HOST_SLUG="${SLUGS[0]}"
@@ -246,4 +247,3 @@ echo "[gen] saved → $OUT_FILE ($(ls -lh "$OUT_FILE" | awk '{print $5}'))"
 
 [ "${NO_OPEN:-}" != "1" ] && open "$OUT_DIR/$SLUG.png" 2>/dev/null || true
 
-bash "$SKILL_DIR/refresh-gallery.sh" "$OUT_DIR" >/dev/null 2>&1 || true

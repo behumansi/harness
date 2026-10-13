@@ -62,4 +62,3 @@ if [ "${NO_OPEN:-}" != "1" ]; then
 fi
 
 # Refresh gallery index
-bash "$(dirname "$0")/refresh-gallery.sh" "$OUT_DIR" >/dev/null 2>&1 || true
